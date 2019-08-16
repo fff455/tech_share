@@ -1,10 +1,28 @@
-
-[TOC]
-
 # 缓存
 
 ![](../asset/cache_process.png)
-  
+
+<!-- TOC -->
+  - [缓存](#缓存)
+  - [DNS缓存](#dns缓存)
+  - [HTTP缓存](#http缓存)
+    - [强缓存](#强缓存)
+      - [Expires](#expires)
+      - [Cache-Control](#cache-control)
+    - [协商缓存（对比缓存）](#协商缓存对比缓存)
+      - [Etag和If-None-Match](#etag和if-none-match)
+      - [Last-Modify/If-Modify-Since](#last-modifyif-modify-since)         
+      - [http1.1中Etag的必要](#http11中etag的必要) 
+  - [Node缓存](#node缓存)     
+    - [程序内存](#程序内存)     
+    - [磁盘](#磁盘)     
+    - [memcache](#memcache)     
+    - [redis](#redis)     
+    - [memcache VS redis](#memcache-vs-redis) 
+  - [服务器缓存](#服务器缓存)     
+    - [一些服务器的缓存配置](#一些服务器的缓存配置)  
+<!-- /TOC -->
+
 # DNS缓存
 
 为了方便记忆，网站都是注册了一个域名，通过域名来访问网站。访问网站内容，实际是通过访问IP地址实现的，所以在域名和IP之前存在一种对应关系，而域名解析服务器即DNS服务器则完成将域名翻译成IP地址的任务。
@@ -131,7 +149,9 @@ Remote Dictionary Server(Redis) 是一个key-value存储系统。Redis是一个�
 1. 用户1访问A页面，服务器解析A页面返回给用户1，同时在服务器内存上做一定映射，把A页面缓存在硬盘上面
 2. 用户2访问A页面，服务器直接根据内存上的映射找到对应的页面缓存，直接返回给用户2，这样就减少了服务器对同一页面的重复解析
 
-## 一些服务器的[缓存配置](https://blog.csdn.net/qiushisoftware/article/details/52276921)
+## 一些服务器的缓存配置
+
+[缓存配置](https://blog.csdn.net/qiushisoftware/article/details/52276921)
 
 - apache
 ```
