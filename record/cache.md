@@ -1,8 +1,9 @@
+
+[TOC]
+
 # 缓存
 
 ![](../asset/cache_process.png)
-  
-[TOC]
   
 # DNS缓存
 
